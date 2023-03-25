@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Kenny1291/personale-website-daisyui#readme",
   "dependencies": {
     "daisyui": "^2.51.5"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
   }
 }
