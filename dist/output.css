@@ -2166,6 +2166,14 @@ html {
   color: hsl(var(--sc) / var(--tw-text-opacity));
 }
 
+.badge-info {
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--in) / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: hsl(var(--inc, var(--nc)) / var(--tw-text-opacity));
+}
+
 .badge-outline {
   border-color: currentColor;
   --tw-border-opacity: 0.5;
@@ -3306,6 +3314,10 @@ html {
   width: 24rem;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .min-w-\[18rem\] {
   min-width: 18rem;
 }
@@ -3343,12 +3355,28 @@ html {
   grid-auto-flow: column;
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.place-content-center {
+  place-content: center;
+}
+
+.content-center {
+  align-content: center;
 }
 
 .items-center {
@@ -3363,12 +3391,20 @@ html {
   justify-content: center;
 }
 
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
 
 .gap-4 {
   gap: 1rem;
+}
+
+.justify-self-center {
+  justify-self: center;
 }
 
 .overflow-x-hidden {
