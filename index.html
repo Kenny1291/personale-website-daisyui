@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
 
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/aos.css" />
+
+    <!-- theme-change -->
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <title>Document</title>
@@ -64,6 +68,7 @@
                 x-show="$store.filter.miniProjects"
                 x-transition:enter.duration.300ms
                 x-transition:leave.duration.150ms
+                data-aos="fade-right"
             >
                 <div class="card w-96 bg-base-100">
                     <figure><img src="assets/random-quote-machine.jpg" /></figure>
@@ -147,6 +152,8 @@
           </div>
         </div>
     </footer>
+    <script src="dist/aos.js"></script>
+    <script>AOS.init()</script>
 </body>
 
 <script>

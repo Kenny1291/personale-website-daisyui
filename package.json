@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Kenny1291/personale-website-daisyui#readme",
   "dependencies": {
+    "aos": "^2.3.4",
     "daisyui": "^2.51.5"
   },
   "devDependencies": {
