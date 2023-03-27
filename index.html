@@ -46,32 +46,9 @@
 
     <div 
         id="myWorkContainer"
-        x-data
     >
-        <div class="flex justify-center mb-7" id="myWork">
-            <div class="form-control" x-on:click="$store.filter.miniProjects = !$store.filter.miniProjects">
-                <label class="label cursor-pointer">
-                <span class="label-text m-2">Mini Projects</span> 
-                <input type="checkbox" class="toggle" checked id="miniProjectsToggle" />
-                </label>
-            </div>
-            <div class="form-control">
-                <label class="label cursor-pointer">
-                <span class="label-text m-2">Front End</span> 
-                <input type="checkbox" class="toggle" checked />
-                </label>
-            </div>
-            <div class="form-control">
-                <label class="label cursor-pointer">
-                <span class="label-text m-2">Back End</span> 
-                <input type="checkbox" class="toggle" checked />
-                </label>
-            </div>
-        </div>
-
         <div class="min-h-screen grid xl:grid-cols-3 gap-y-8 justify-center">
             <a href="https://codepen.io/Kenny_1291/full/OJowWLR" target="_blank" class="justify-self-center"
-                x-show="$store.filter.miniProjects"
                 x-transition:enter.duration.300ms
                 x-transition:leave.duration.150ms
                 data-aos="zoom-in"
@@ -166,17 +143,4 @@
         })
     </script>
 </body>
-
-<script>
-    document.addEventListener('alpine:init', () => {
-        Alpine.store('filter', {
-            init() {
-                this.miniProjects = document.getElementById("miniProjectsToggle").checked
-            },
-
-            miniProjects: true,
-        })
-    })
-</script>
-
 </html>
