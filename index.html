@@ -187,33 +187,43 @@
     <div class="min-h-screen bg-base-200 flex flex-col items-center">
         <h2 class="text-center text-5xl font-bold mb-28">Skills</h2>
         <div class="mockup-window border bg-base-300 glass h-[75vh] w-[60%] rounded-3xl shadow-2xl flex">
-            <div class="mt-10">
+            <div 
+                class="mt-10"
+                x-data="{ activeTab: 0 }"
+            >
                 <div class="tabs ml-7">
-                    <a class="tab tab-lifted">Tab 1</a> 
-                    <a class="tab tab-lifted tab-active">Tab 2</a> 
-                    <a class="tab tab-lifted">Tab 3</a>
+                    <a class="tab tab-lifted" x-on:click="activeTab = 0" x-bind:class="activeTab === 0 ? 'tab-active' : '' ">Tab 1</a> 
+                    <a class="tab tab-lifted" x-on:click="activeTab = 1" x-bind:class="activeTab === 1 ? 'tab-active' : '' ">Tab 2</a> 
+                    <a class="tab tab-lifted" x-on:click="activeTab = 2" x-bind:class="activeTab === 2 ? 'tab-active' : '' ">Tab 3</a>
                 </div>
-                <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg">
+                <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 0">
                     <h3 class="text-3xl">Programming Languages</h3>
                     <div class="divider"></div>
                     <div tabindex="0">
                         <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-xs">Search Engines</span> 
+                            <span class="text-base-content/70 w-48 text-md">Search Engines</span> 
                             <progress max="100" value="50" class="progress progress-success"></progress>
                         </div> 
                         <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-xs">Direct</span>
+                            <span class="text-base-content/70 w-48 text-md">Direct</span>
                             <progress max="100" value="30" class="progress progress-primary"></progress>
                         </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-xs">Social Media</span> 
+                            <span class="text-base-content/70 w-48 text-md">Social Media</span> 
                             <progress max="100" value="70" class="progress progress-secondary"></progress>
                         </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-xs">Emails</span> 
+                            <span class="text-base-content/70 w-48 text-md">Emails</span> 
                             <progress max="100" value="90" class="progress progress-accent"></progress>
                         </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-xs">Ad campaigns</span> 
+                            <span class="text-base-content/70 w-48 text-md">Ad campaigns</span> 
                             <progress max="100" value="65" class="progress progress-warning"></progress>
-                        </div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 1">
+                    <h3 class="text-3xl">TAB 1 CONTENT</h3>
+                </div>
+                <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 2">
+                    <h3 class="text-3xl">TAB 2 CONTENT</h3>
                 </div>
             </div>
             <div class="mx-4 p-28 bg-base-100 rounded-lg">
