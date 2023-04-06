@@ -12,7 +12,9 @@
 
     <!-- theme-change -->
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-    <!-- Alpine.js -->
+    <!-- Alpine Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine.js Core -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <title>Raiquen Guidotti</title>
@@ -197,25 +199,56 @@
                     <a class="tab tab-lifted" x-on:click="activeTab = 2" x-bind:class="activeTab === 2 ? 'tab-active' : '' ">Tab 3</a>
                 </div>
                 <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 0">
-                    <h3 class="text-3xl">Programming Languages</h3>
+                    <h3 class="text-3xl">Web Development</h3>
                     <div class="divider"></div>
                     <div tabindex="0">
                         <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Search Engines</span> 
-                            <progress max="100" value="50" class="progress progress-success"></progress>
+                            <span class="text-base-content/70 w-48 text-md">PHP</span>
+                            <progress max="100" value="0" class="progress progress-success"
+                                x-data="{ value: 50, start: 0 }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 500)}"
+                                x-intersect:leave="start = 0"
+                            >
+                        </progress>
                         </div> 
                         <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Direct</span>
-                            <progress max="100" value="30" class="progress progress-primary"></progress>
+                            <span class="text-base-content/70 w-48 text-md">HTML</span>
+                            <progress max="100" value="0" class="progress progress-primary"
+                                x-data="{ value: 80, start: 0 }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 600)}"
+                                x-intersect:leave="start = 0"
+                            >
+                            </progress>
                         </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Social Media</span> 
-                            <progress max="100" value="70" class="progress progress-secondary"></progress>
+                            <span class="text-base-content/70 w-48 text-md">CSS</span> 
+                            <progress max="100" value="0" class="progress progress-secondary"
+                                x-data="{ value: 70, start: 0 }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 700)}"
+                                x-intersect:leave="start = 0"
+                            >
+                            </progress>
                         </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Emails</span> 
-                            <progress max="100" value="90" class="progress progress-accent"></progress>
+                            <span class="text-base-content/70 w-48 text-md">JavaScript</span> 
+                            <progress max="100" value="0" class="progress progress-accent"
+                                x-data="{ value: 50, start: 0 }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 800)}"
+                                x-intersect:leave="start = 0"
+                            >
+                            </progress>
                         </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Ad campaigns</span> 
-                            <progress max="100" value="65" class="progress progress-warning"></progress>
+                            <span class="text-base-content/70 w-48 text-md">Laravel</span> 
+                            <progress max="100" value="05" class="progress progress-warning"
+                                x-data="{ value: 50, start: 0 }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 900)}"
+                                x-intersect:leave="start = 0"
+                            >
+
+                            </progress>
                         </div>
                     </div>
                 </div>
@@ -271,6 +304,18 @@
             miniProjects: true,
         })
     })
+</script>
+
+<script>
+    function setIntervalX(callback, delay, repetitions) {
+        let x = 0;
+        let intervalId = setInterval(() => {
+            callback();
+            if (++x === repetitions) {
+                clearInterval(intervalId);
+            }
+        }, delay);
+    }
 </script>
 
 </html>
