@@ -198,69 +198,223 @@
                     <a class="tab tab-lifted" x-on:click="activeTab = 1" x-bind:class="activeTab === 1 ? 'tab-active' : '' ">Tab 2</a> 
                     <a class="tab tab-lifted" x-on:click="activeTab = 2" x-bind:class="activeTab === 2 ? 'tab-active' : '' ">Tab 3</a>
                 </div>
+                <!-- TAB 1 -->
                 <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 0">
                     <h3 class="text-3xl">Web Development</h3>
                     <div class="divider"></div>
                     <div tabindex="0">
                         <div class="flex items-center p-1">
                             <span class="text-base-content/70 w-48 text-md">PHP</span>
-                            <progress max="100" value="0" class="progress progress-success"
-                                x-data="{ value: 50, start: 0 }"
+                            <progress max="100" value="0" class="progress progress-primary"
+                                x-data="{ value: 70, start: 0, isLoaded: false }"
                                 x-bind:value="start"
-                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 500)}"
-                                x-intersect:leave="start = 0"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 500)}"
                             >
                         </progress>
                         </div> 
                         <div class="flex items-center p-1">
                             <span class="text-base-content/70 w-48 text-md">HTML</span>
-                            <progress max="100" value="0" class="progress progress-primary"
-                                x-data="{ value: 80, start: 0 }"
-                                x-bind:value="start"
-                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 600)}"
-                                x-intersect:leave="start = 0"
-                            >
-                            </progress>
-                        </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">CSS</span> 
                             <progress max="100" value="0" class="progress progress-secondary"
-                                x-data="{ value: 70, start: 0 }"
+                                x-data="{ value: 90, start: 0, isLoaded: false }"
                                 x-bind:value="start"
-                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 700)}"
-                                x-intersect:leave="start = 0"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 600)}"
                             >
                             </progress>
-                        </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">JavaScript</span> 
+                        </div>
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">CSS</span> 
                             <progress max="100" value="0" class="progress progress-accent"
-                                x-data="{ value: 50, start: 0 }"
+                                x-data="{ value: 80, start: 0, isLoaded: false }"
                                 x-bind:value="start"
-                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 800)}"
-                                x-intersect:leave="start = 0"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 700)}"
                             >
                             </progress>
-                        </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Laravel</span> 
-                            <progress max="100" value="05" class="progress progress-warning"
-                                x-data="{ value: 50, start: 0 }"
+                        </div> 
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">JavaScript</span> 
+                            <progress max="100" value="0" class="progress progress-success"
+                                x-data="{ value: 50, start: 0, isLoaded: false }"
                                 x-bind:value="start"
-                                x-intersect:enter="if (start < value) {setTimeout(() => setIntervalX(() => start++, 0, value), 900)}"
-                                x-intersect:leave="start = 0"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 800)}"
                             >
-
+                            </progress>
+                        </div> 
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Laravel</span> 
+                            <progress max="100" value="05" class="progress progress-info"
+                                x-data="{ value: 60, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 900)}"
+                            >
+                            </progress>
+                        </div>
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Livewire</span> 
+                            <progress max="100" value="05" class="progress progress-warning"
+                                x-data="{ value: 50, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 1000)}"
+                            >
                             </progress>
                         </div>
                     </div>
                 </div>
+                <!-- TAB 2 -->
                 <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 1">
-                    <h3 class="text-3xl">TAB 1 CONTENT</h3>
+                    <h3 class="text-3xl">Databases</h3>
+                    <div class="divider"></div>
+                    <div tabindex="0">
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">SQL</span>
+                            <progress max="100" value="0" class="progress progress-primary"
+                                x-data="{ value: 70, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 100)}"
+                            >
+                            </progress>
+                        </div> 
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">PL/SQL</span>
+                            <progress max="100" value="0" class="progress progress-secondary"
+                                x-data="{ value: 40, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 200)}"
+                            >
+                            </progress>
+                        </div> <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Relational</span> 
+                            <progress max="100" value="0" class="progress progress-accent"
+                                x-data="{ value: 80, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 300)}"
+                            >
+                            </progress>
+                        </div>
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Document</span> 
+                            <progress max="100" value="0" class="progress progress-success"
+                                x-data="{ value: 30, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 400)}"
+                            >
+                            </progress>
+                        </div>
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Development</span> 
+                            <progress max="100" value="0" class="progress progress-info"
+                                x-data="{ value: 70, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 500)}"
+                            >
+                            </progress>
+                        </div>
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Management</span> 
+                            <progress max="100" value="0" class="progress progress-warning"
+                                x-data="{ value: 60, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 600)}"
+                            >
+                            </progress>
+                        </div>
+                    </div>
                 </div>
+                <!-- TAB 3 -->
                 <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 2">
-                    <h3 class="text-3xl">TAB 2 CONTENT</h3>
+                    <h3 class="text-3xl">Others</h3>
+                    <div class="divider"></div>
+                    <div tabindex="0">
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Networking</span>
+                            <progress max="100" value="0" class="progress progress-primary"
+                                x-data="{ value: 60, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 100)}"
+                            >
+                            </progress>
+                        </div> 
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Windows</span>
+                            <progress max="100" value="0" class="progress progress-secondary"
+                                x-data="{ value: 80, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 200)}"
+                            >
+                            </progress>
+                        </div>
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Windows Server</span>
+                            <progress max="100" value="0" class="progress progress-accent"
+                                x-data="{ value: 60, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 300)}"
+                            >
+                            </progress>
+                        </div>
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Linux</span> 
+                            <progress max="100" value="0" class="progress progress-success"
+                                x-data="{ value: 40, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 400)}"
+                            >
+                            </progress>
+                        </div>
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">Virtualization</span> 
+                            <progress max="100" value="0" class="progress progress-info"
+                                x-data="{ value: 50, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 500)}"
+                            >
+                            </progress>
+                        </div>
+                        <div class="flex items-center p-1">
+                            <span class="text-base-content/70 w-48 text-md">UML</span> 
+                            <progress max="100" value="05" class="progress progress-warning"
+                                x-data="{ value: 60, start: 0, isLoaded: false }"
+                                x-bind:value="start"
+                                x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 600)}"
+                            >
+                            </progress>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="mx-4 p-28 bg-base-100 rounded-lg">
-
+            <!-- SIDEBAR -->
+            <div class="mx-4 mt-[4.5rem] px-20 h-[85.5%] bg-base-100 rounded-lg flex flex-col justify-center items-center gap-y-2">
+                <div class="radial-progress bg-primary text-accent-content border-4 border-primary"
+                    x-data="{ value: 70, start: 0, isLoaded: false }"
+                    x-bind:style="`--value:${start}; --size:3.9rem;`"
+                    x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 500)}"
+                    x-text="`${start}%`"
+                >
+                </div>
+                <div class="font-bold">Problem solving</div>
+                <div class="radial-progress bg-secondary text-accent-content border-4 border-secondary"
+                    x-data="{ value: 85, start: 0, isLoaded: false }"
+                    x-bind:style="`--value:${start}; --size:3.9rem;`"
+                    x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 600)}"
+                    x-text="`${start}%`"
+                >
+                </div>
+                <div class="font-bold">Perseverance</div>
+                <div class="radial-progress bg-accent text-accent-content border-4 border-accent"
+                    x-data="{ value: 75, start: 0, isLoaded: false }"
+                    x-bind:style="`--value:${start}; --size:3.9rem;`"
+                    x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 700)}"
+                    x-text="`${start}%`"
+                >
+                </div>
+                <div class="font-bold">Analytical Thinking</div>
+                <div class="radial-progress bg-success text-accent-content border-4 border-success"
+                    x-data="{ value: 70, start: 0, isLoaded: false }"
+                    x-bind:style="`--value:${start}; --size:3.9rem;`"
+                    x-intersect:enter="if (!isLoaded) {isLoaded = true; setTimeout(() => setIntervalX(() => start++, 0, value - start), 800)}"
+                    x-text="`${start}%`"
+                >
+                </div>
+                <div class="font-bold">Troubleshooting</div>
             </div>
         </div>
     </div>
