@@ -3440,6 +3440,10 @@ html {
   pointer-events: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .float-right {
   float: right;
 }
@@ -3601,8 +3605,92 @@ html {
   height: 85.5%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-\[20rem\] {
+  height: 20rem;
+}
+
+.h-\[800rem\] {
+  height: 800rem;
+}
+
+.h-\[900rem\] {
+  height: 900rem;
+}
+
+.h-\[1000rem\] {
+  height: 1000rem;
+}
+
+.h-\[100rem\] {
+  height: 100rem;
+}
+
+.h-\[30000rem\] {
+  height: 30000rem;
+}
+
+.h-\[3000rem\] {
+  height: 3000rem;
+}
+
+.h-\[80rem\] {
+  height: 80rem;
+}
+
+.h-\[50rem\] {
+  height: 50rem;
+}
+
+.h-\[30rem\] {
+  height: 30rem;
+}
+
+.h-\[40rem\] {
+  height: 40rem;
+}
+
+.h-\[\%\] {
+  height: %;
+}
+
+.h-\[7\%\] {
+  height: 7%;
+}
+
+.h-\[70\%\] {
+  height: 70%;
+}
+
+.h-\[75\%\] {
+  height: 75%;
+}
+
+.h-\[81\%\] {
+  height: 81%;
+}
+
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-\[\] {
+  min-height: ;
+}
+
+.min-h-\[60\%\] {
+  min-height: 60%;
+}
+
+.min-h-\[90\%\] {
+  min-height: 90%;
+}
+
+.min-h-\[20rem\] {
+  min-height: 20rem;
 }
 
 .w-10 {
@@ -3619,6 +3707,38 @@ html {
 
 .w-\[60\%\] {
   width: 60%;
+}
+
+.w-\[20\%\] {
+  width: 20%;
+}
+
+.w-\[20rem\] {
+  width: 20rem;
+}
+
+.w-\[60rem\] {
+  width: 60rem;
+}
+
+.w-\[50rem\] {
+  width: 50rem;
+}
+
+.w-\[40rem\] {
+  width: 40rem;
+}
+
+.w-\[45rem\] {
+  width: 45rem;
+}
+
+.min-w-\[50rem\] {
+  min-width: 50rem;
+}
+
+.min-w-\[\] {
+  min-width: ;
 }
 
 .max-w-sm {
@@ -4059,6 +4179,42 @@ html {
 }
 
 @media (min-width: 1024px) {
+  .lg\:visible {
+    visibility: visible;
+  }
+
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:inline {
+    display: inline;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:w-\[50rem\] {
+    width: 50rem;
+  }
+
+  .lg\:w-\[60rem\] {
+    width: 60rem;
+  }
+
+  .lg\:w-\[80rem\] {
+    width: 80rem;
+  }
+
+  .lg\:w-\[70rem\] {
+    width: 70rem;
+  }
+
+  .lg\:w-\[65rem\] {
+    width: 65rem;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
