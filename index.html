@@ -57,11 +57,12 @@
                 data-aos="slide-down"
                 data-aos-duration="1000"
                 data-aos-easing="ease-out-cubic"
-                data-aos-once="true" data-en="I am an IT professional from Bellinzona, Switzerland."
+                data-aos-once="true"
+                data-en="I am an IT professional from Bellinzona, Switzerland."
                 data-it="Sono un informatico di Bellinzona, Svizzera."
             >
             </p>
-            <a href="#myWork"><button class="btn btn-outline">See my work</button></a>
+            <a href="#myWork"><button class="btn btn-outline" data-en="See my work" data-it="Visiona il mio lavoro "></button></a>
           </div>
         </div>
     </div>
@@ -91,7 +92,11 @@
                         <h2 class="card-title">
                             Random Quote Machine
                         </h2>
-                        <p>View inspiring quotes and share them on Twitter.</p>
+                        <p
+                            data-en="View inspiring quotes and share them on Twitter."
+                            data-it="Guarda citazioni stimolanti e condividile su Twitter."
+                        >
+                        </p>
                         <div class="card-actions justify-end">
                             <div class="badge badge-outline">Front End</div> 
                             <div class="badge badge-outline">React</div>
@@ -115,7 +120,11 @@
                         <h2 class="card-title">
                             Drum Machine
                         </h2>
-                        <p>Play and interactive soundboard, use the keyboard.</p>
+                        <p
+                            data-en="Play an interactive soundboard, you can even use the keyboard."
+                            data-it="Suona una tavola armonica, puoi anche usare la tastiera."
+                        >
+                        </p>
                         <div class="card-actions justify-end">
                             <div class="badge badge-outline">Front End</div> 
                             <div class="badge badge-outline">React</div>
@@ -139,7 +148,11 @@
                         <h2 class="card-title">
                             JavaScript Calculator
                         </h2>
-                        <p>Simple calculator built with JavaScript and styled with daisyUI.</p>
+                        <p
+                            data-en="Simple calculator built with JavaScript and styled with daisyUI."
+                            data-it="Semplice calcotrice sviluppata con JavaScript e styled con daisyUI."
+                        >
+                        </p>
                         <div class="card-actions justify-end">
                             <div class="badge badge-outline">Front End</div> 
                             <div class="badge badge-outline">React</div>
@@ -169,7 +182,7 @@
                 </div>
                 <!-- TAB 1 -->
                 <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 0">
-                    <h3 class="text-3xl">Web Development</h3>
+                    <h3 class="text-3xl" data-en="Web Development" data-it="Sviluppo Web"></h3>
                     <div class="divider"></div>
                     <div tabindex="0">
                         <div class="flex items-center p-1">
@@ -230,7 +243,7 @@
                 </div>
                 <!-- TAB 2 -->
                 <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 1">
-                    <h3 class="text-3xl">Databases</h3>
+                    <h3 class="text-3xl" data-en="Databases" data-it="Banche Dati"></h3>
                     <div class="divider"></div>
                     <div tabindex="0">
                         <div class="flex items-center p-1">
@@ -251,7 +264,7 @@
                             >
                             </progress>
                         </div> <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Relational</span> 
+                            <span class="text-base-content/70 w-48 text-md" data-en="Relational" data-it="Relazionale"></span> 
                             <progress max="100" value="0" class="progress progress-accent"
                                 x-data="{ value: 80, start: 0, isLoaded: false }"
                                 x-bind:value="start"
@@ -269,7 +282,7 @@
                             </progress>
                         </div>
                         <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Development</span> 
+                            <span class="text-base-content/70 w-48 text-md" data-en="Development" data-it="Sviluppo"></span> 
                             <progress max="100" value="0" class="progress progress-info"
                                 x-data="{ value: 70, start: 0, isLoaded: false }"
                                 x-bind:value="start"
@@ -278,7 +291,7 @@
                             </progress>
                         </div>
                         <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Management</span> 
+                            <span class="text-base-content/70 w-48 text-md" data-en="Management" data-it="Amministrazione"></span> 
                             <progress max="100" value="0" class="progress progress-warning"
                                 x-data="{ value: 60, start: 0, isLoaded: false }"
                                 x-bind:value="start"
@@ -290,7 +303,7 @@
                 </div>
                 <!-- TAB 3 -->
                 <div class="flex flex-col justify-center mx-4 p-28 bg-base-100 rounded-lg" x-show="activeTab === 2">
-                    <h3 class="text-3xl">Others</h3>
+                    <h3 class="text-3xl" data-en="Others" data-it="Altro"></h3>
                     <div class="divider"></div>
                     <div tabindex="0">
                         <div class="flex items-center p-1">
@@ -330,7 +343,7 @@
                             </progress>
                         </div>
                         <div class="flex items-center p-1">
-                            <span class="text-base-content/70 w-48 text-md">Virtualization</span> 
+                            <span class="text-base-content/70 w-48 text-md" data-en="Virtualization" data-it="Virtualizzazione"></span> 
                             <progress max="100" value="0" class="progress progress-info"
                                 x-data="{ value: 50, start: 0, isLoaded: false }"
                                 x-bind:value="start"
@@ -367,7 +380,7 @@
                     x-text="`${start}%`"
                 >
                 </div>
-                <div class="font-bold">Perseverance</div>
+                <div class="font-bold" data-en="Perseverance" data-it="Perseveranza"></div>
                 <div class="radial-progress bg-accent text-accent-content border-4 border-accent"
                     x-data="{ value: 75, start: 0, isLoaded: false }"
                     x-bind:style="`--value:${start}; --size:3.9rem;`"
@@ -375,7 +388,7 @@
                     x-text="`${start}%`"
                 >
                 </div>
-                <div class="font-bold">Analytical Thinking</div>
+                <div class="font-bold" data-en="Analytical Thinking" data-it="Pensiero Analitico"></div>
                 <div class="radial-progress bg-success text-accent-content border-4 border-success"
                     x-data="{ value: 70, start: 0, isLoaded: false }"
                     x-bind:style="`--value:${start}; --size:3.9rem;`"
