@@ -416,4 +416,15 @@
         })
     </script>
 </body>
+<script>
+    function setIntervalX(callback, delay, repetitions) {
+        let x = 0;
+        let intervalId = setInterval(() => {
+            callback();
+            if (++x === repetitions) {
+                clearInterval(intervalId);
+            }
+        }, delay);
+    }
+</script>
 </html>
