@@ -6,7 +6,7 @@ My personal website where you can find the projects I built and a little bit abo
 - HTML
 - Alpine.js
 - Vanilla JavaScript
-- daisyUI(Tailwind CSS)
+- daisyUI (Tailwind CSS)
 
 #### 🏗️ Deployment: custom server
 
