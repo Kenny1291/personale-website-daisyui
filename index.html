@@ -31,8 +31,14 @@
 
     <span
         class="font-bold text-lg select-none float-right pt-5 mr-4 cursor-pointer"
-        x-data="{ langEn: true, textElements: document.querySelectorAll('[data-en], [data-it]') }"
-        x-init:="$watch ('langEn', value => textElements.forEach((el) => el.textContent = el.dataset[langEn ? 'en' : 'it']))"
+        x-data="{ langEn: true,
+            textElements: document.querySelectorAll('[data-en], [data-it]'),
+            cvLinks: {EN: '/assets/Curriculum vitae - Raiquen Guidotti - ENG.pdf', IT: '/assets/Curriculum vitae - Raiquen Guidotti.pdf'} 
+        }"
+        x-init="$watch('langEn', value => {
+            textElements.forEach((el) => el.textContent = el.dataset[langEn ? 'en' : 'it'])
+            document.getElementById('downloadCvButton').href = langEn ? cvLinks.EN : cvLinks.IT
+        })"
         x-on:click="langEn = !langEn"
     >
         <span x-show="langEn" x-transition:enter.duration.300ms>EN</span>
@@ -462,8 +468,9 @@
 
     <div class="divider"></div>
     
+    <!-- DOWNLOAD CV BUTTON -->
     <div class="flex">
-        <a href="/assets/Curriculum vitae - Raiquen Guidotti.pdf" target="_blank" class="m-auto"><button class="btn btn-outline btn-block btn-lg w-[30vw]">Download My CV</button></a>
+        <a href="" target="_blank" class="m-auto"><button class="btn btn-outline btn-block btn-lg w-[30vw]" id="downloadCvButton">Download My CV</button></a>
     </div>
 
     <footer class="flex p-10 bg-neutral text-neutral-content mt-5" style="justify-content: space-between;"> <!--tailwind wouldn't apply justify-between -->
@@ -497,8 +504,12 @@
         </div>
     </footer>
 
-    <!-- Load EN Text -->
-    <script>onload = () => {document.querySelectorAll('[data-en], [data-it]').forEach((el) => el.textContent = el.dataset['en'])}</script>
+    <!-- Load EN Text and set downloadCvButton href -->
+    <script>onload = () => {
+        document.querySelectorAll('[data-en], [data-it]').forEach((el) => el.textContent = el.dataset['en'])
+        document.getElementById('downloadCvButton').href = "/assets/Curriculum vitae - Raiquen Guidotti - ENG.pdf"
+    }
+    </script>
     <!-- AOS Js -->
     <script src="dist/aos.js"></script>
     <script>
